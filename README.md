@@ -1,1 +1,1 @@
-# FancyShmancy-Nails
+# FS-Nails
