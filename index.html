@@ -2432,7 +2432,32 @@
                                             
                                             
                                             <div data-node-id="1555853539jazsy" class="row content-block"><div style="text-align:center" class="col-lg-12">
-                                            <img width="697" height="476" src="uploads/liana-2.jpg" class="attachment-full size-full lazy-ignor" alt="" style="" srcset="uploads/liana-2.jpg 697w, uploads/liana-2.jpg 300w, uploads/liana-2.jpg 542w" sizes="(max-width: 697px) 100vw, 697px" style="pointer-events: none">
+                                                <picture style="width:697px; height:476px;" class="attachment-full size-full lazy-ignor"> 
+                                                    <source width="697" height="476" srcset="https://via.placeholder.com/1" srcset1="uploads/liana-2.webp" type="image/webp" class="attachment-full size-full lazy-ignor">
+                                                    <img width="697" height="476" src="uploads/liana-2.jpg" alt="Liana Image" class="attachment-full size-full lazy-ignor">
+                                                  </picture>
+                                                  <script>const options = {
+                                                    rootMargin: "25px",
+                                                    threshold: 0.1
+                                                  };
+                                                  const io = new IntersectionObserver(entries => {
+                                                    entries.forEach(entry => {
+                                                      //console.log('entry: ', entry);
+                                                      if (entry.intersectionRatio > 0.1) {
+                                                        var imgsrc = entry.target.getAttribute("srcset1");
+                                                        entry.target.setAttribute("srcset", imgsrc);
+                                                        entry.target.removeAttribute("srcset1");
+                                                        io.unobserve(entry.target);
+                                                      }
+                                                    });
+                                                  }, options);
+                                                  
+                                                  const targetElements = document.querySelectorAll("source");
+                                                  for (let element of targetElements) {
+                                                    //console.log('element: ', element);
+                                                    io.observe(element);
+                                                  }</script>
+                                            <!-- <img width="697" height="476" src="uploads/liana-2.jpg" class="attachment-full size-full lazy-ignor" alt="" style="" srcset="uploads/liana-2.jpg 697w, uploads/liana-2.jpg 300w, uploads/liana-2.jpg 542w" sizes="(max-width: 697px) 100vw, 697px" style="pointer-events: none"> -->
                                         </div></div>
                                         </div>
                                         
